@@ -1,11 +1,8 @@
 package ua.training.model.dao.mapper;
 
 import java.sql.ResultSet;
-import java.util.Map;
+import java.sql.SQLException;
 
 public interface ObjectMapper<T> {
-
-    T extractFromResultSet(ResultSet rs);
-
-    T makeUnique(Map<Integer, T> cache, T obj);
+    T extractFromResultSet(ResultSet rs) throws SQLException;
 }

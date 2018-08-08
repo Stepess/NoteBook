@@ -3,13 +3,14 @@ package ua.training.model.entity;
 public class Record {
 
     private String login;
-    private String firstName;
     private String email;
     private Address address;
 
-    public Record(String login, String firstName, String email, Address address) {
+    public Record() {
+    }
+
+    public Record(String login, String email, Address address) {
         this.login = login;
-        this.firstName = firstName;
         this.email = email;
         this.address = address;
     }
@@ -20,14 +21,6 @@ public class Record {
 
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getEmail() {
@@ -44,5 +37,14 @@ public class Record {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                '}';
     }
 }

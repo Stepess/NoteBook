@@ -8,4 +8,5 @@ public interface GenericDAO<T> extends AutoCloseable {
     List<T> findAll();
     boolean update(T obj);
     boolean delete(int id);
+    void close();
 }

@@ -1,17 +1,18 @@
 package ua.training.model.entity;
 
+import java.util.Objects;
+
 public class Address {
 
     private String country;
     private String city;
-    private String street;
-    private int building;
+
+    public Address() {
+    }
 
     public Address(String country, String city, String street, int building) {
         this.country = country;
         this.city = city;
-        this.street = street;
-        this.building = building;
     }
 
     public String getCountry() {
@@ -30,20 +31,26 @@ public class Address {
         this.city = city;
     }
 
-    public String getStreet() {
-        return street;
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+        Address address = (Address) o;
+        return Objects.equals(country, address.country) &&
+                Objects.equals(city, address.city);
     }
 
-    public int getBuilding() {
-        return building;
+    @Override
+    public int hashCode() {
+        return Objects.hash(country, city);
     }
-
-    public void setBuilding(int building) {
-        this.building = building;
-    }
-
 }
